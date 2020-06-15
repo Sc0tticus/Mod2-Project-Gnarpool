@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  phone: MyString
+  email: MyString
+  date: 2020-06-15
+  time: 2020-06-15 11:53:15
+  resort: MyString
+  pass: MyString
+  VenMo: MyString
+
+two:
+  name: MyString
+  phone: MyString
+  email: MyString
+  date: 2020-06-15
+  time: 2020-06-15 11:53:15
+  resort: MyString
+  pass: MyString
+  VenMo: MyString

@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Rider: one
+  Driver: one
+
+two:
+  Rider: two
+  Driver: two
