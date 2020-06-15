@@ -7,7 +7,7 @@ driver1 = Driver.create(name: "Jordan", phone: "3031112222", email: "jordan303@g
 
 rider1 = Rider.create(name: "Scott", phone: "3031112222", email: "ssinger303@gmail.com", date: nil, time: nil, resort: "Loveland", pass: "Ikon", VenMo: "Scott12")
 
-ride1 = Ride.create(Rider_id: rider1, Driver_id: driver1)
+ride1 = Ride.create(Rider: rider1, Driver: driver1)
 
 
 # create_table "rides", force: :cascade do |t|
