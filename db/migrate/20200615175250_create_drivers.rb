@@ -4,8 +4,7 @@ class CreateDrivers < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :phone
       t.string :email
-      t.date :date
-      t.time :time
+      t.datetime :time
       t.string :resort
       t.string :pass
       t.string :VenMo

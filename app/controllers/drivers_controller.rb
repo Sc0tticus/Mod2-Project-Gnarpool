@@ -14,7 +14,7 @@ class DriversController < ApplicationController
 
     else
        @drivers = Driver.all 
-      render json: @drivers
+      render json: @drivers, inlcude: [:rides]
     end
   end
 
@@ -28,13 +28,12 @@ class DriversController < ApplicationController
       name: params[:name],
       phone: params[:phone],
       email: params[:email],
-      date: params[:date],
       time: params[:time],
       resort: params[:resort],
       pass: params[:pass],
       VenMo: params[:VenMo],
     )
-      redirect_to 'http://localhost:3001/index.html'
+      redirect_to 'http://localhost:3001/driversList.html'
   end
 
   def destroy

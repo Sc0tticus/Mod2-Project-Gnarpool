@@ -1,4 +1,4 @@
 class Ride < ApplicationRecord
-  belongs_to :Rider
-  belongs_to :Driver
+  belongs_to :rider
+  belongs_to :driver
 end
