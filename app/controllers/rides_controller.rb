@@ -1,8 +1,8 @@
-class RideController < ApplicationController
+class RidesController < ApplicationController
 
   def index #GET / rides
     @rides = Ride.all 
-    render json: @ride
+    render json: @rides
   end
 
   def show # GET / rides/:id
