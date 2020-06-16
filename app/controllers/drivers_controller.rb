@@ -1,5 +1,5 @@
 class DriversController < ApplicationController
-  def index
+  def index #GET / Drivers
     if params[:resort]
       @drivers = Driver.where(resort: params[:resort])
       render json: @drivers
@@ -13,29 +13,34 @@ class DriversController < ApplicationController
       render json: @drivers
 
     else
-      @drivers = Driver.all 
+       @drivers = Driver.all 
       render json: @drivers
     end
   end
 
-  def show
+  def show #GET /Drivers/:id
     @driver = Driver.find(params[:id])
-
     render json: @driver, inlcude: [:rides]
   end
 
   def create 
     @driver = Driver.create(
-        name: params[:name],
-        phone: params[:phone],
-        email: params[:email],
-        date: params[:date],
-        time: params[:time],
-        resort: params[:resort],
-        pass: params[:pass],
-        VenMo: params[:VenMo],
+      name: params[:name],
+      phone: params[:phone],
+      email: params[:email],
+      date: params[:date],
+      time: params[:time],
+      resort: params[:resort],
+      pass: params[:pass],
+      VenMo: params[:VenMo],
     )
-    redirect_to 'http://localhost:3001/index.html'
-end
+      redirect_to 'http://localhost:3001/index.html'
+  end
+
+  def destroy
+    @driver = Driver.find(params[:id])
+    @driver.destroy
+    render json: {message: "Driver #{@driver.id} has been deleted!"}
+  end
 
 end
