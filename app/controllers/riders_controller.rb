@@ -2,12 +2,12 @@ class RidersController < ApplicationController
   
   def index #GET / riders
     @riders = Rider.all 
-    render json: @riders, inlcude: [:rides]
+    render json: @riders, include: [:rides]
   end
 
   def show #GET /riders/:id
     @rider = Rider.find(params[:id])
-    render json: @rider, inlcude: [:rides]
+    render json: @rider, include: [:rides]
   end
 
   def create #POST / riders

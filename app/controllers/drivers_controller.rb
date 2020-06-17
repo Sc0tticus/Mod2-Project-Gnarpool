@@ -14,13 +14,13 @@ class DriversController < ApplicationController
 
     else
        @drivers = Driver.all 
-      render json: @drivers, inlcude: [:rides]
+      render json: @drivers, include: [:rides]
     end
   end
 
   def show #GET /Drivers/:id
     @driver = Driver.find(params[:id])
-    render json: @driver, inlcude: [:rides]
+    render json: @driver, include: [:rides]
   end
 
   def create 
