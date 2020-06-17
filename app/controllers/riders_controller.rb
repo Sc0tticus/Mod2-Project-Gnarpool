@@ -1,8 +1,21 @@
 class RidersController < ApplicationController
   
   def index #GET / riders
-    @riders = Rider.all 
-    render json: @riders, include: [:rides]
+    if params[:resort]
+      @riders = Rider.where(resort: params[:resort])
+      render json: @riders
+
+    elsif params[:pass]
+      @riders = Rider.where(pass: params[:pass])
+      render json: @riders
+
+    elsif params[:date]
+      @riders = Rider.where(date: params[:date])
+      render json: @riders
+    else
+      @riders = Rider.all 
+      render json: @riders, include: [:rides]
+    end
   end
 
   def show #GET /riders/:id
