@@ -1,5 +1,7 @@
 class DriversController < ApplicationController
   def index #GET / Drivers
+    
+
     if params[:resort]
       @drivers = Driver.where(resort: params[:resort])
       render json: @drivers
