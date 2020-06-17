@@ -11,8 +11,12 @@ class RidesController < ApplicationController
   end
 
   def create #POST /ride
-    @ride = Ride.create(Rider_id: params[:Rider_id], Driver_id: params[:Driver_id])
-    render json: @ride
+    @driver = Driver.find(params[:driver_id].to_i)
+    @rider = Rider.find(params[:rider_id].to_i)
+
+    @ride = Ride.create(rider: @rider, driver: @driver)
+
+    redirect_back fallback_location: @ride
   end
 
   def update
