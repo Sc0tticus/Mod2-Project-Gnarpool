@@ -33,7 +33,7 @@ class RidersController < ApplicationController
         pass: params[:pass],
         VenMo: params[:VenMo],
     )
-    redirect_to 'http://localhost:3001/ridersList.html'
+    redirect_to 'http://localhost:3001/driversList.html'
   end
 
   def update
