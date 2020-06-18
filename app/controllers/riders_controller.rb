@@ -1,3 +1,5 @@
+require 'byebug'
+
 class RidersController < ApplicationController
   
   def index #GET / riders
@@ -34,6 +36,7 @@ class RidersController < ApplicationController
         VenMo: params[:VenMo],
     )
     redirect_to 'http://localhost:3001/driversList.html'
+
   end
 
   def update

@@ -1,3 +1,4 @@
+require 'byebug'
 class DriversController < ApplicationController
   def index #GET / Drivers
     
