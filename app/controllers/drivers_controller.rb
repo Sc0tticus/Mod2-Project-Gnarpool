@@ -22,7 +22,7 @@ class DriversController < ApplicationController
 
   def show #GET /Drivers/:id
     @driver = Driver.find(params[:id])
-    render json: @driver, include: [:rides]
+    render json: @driver, include: [:riders, :rides]
   end
 
   def create 

@@ -20,7 +20,7 @@ class RidersController < ApplicationController
 
   def show #GET /riders/:id
     @rider = Rider.find(params[:id])
-    render json: @rider, include: [:rides]
+    render json: @rider, include: [:drivers, :rides]
   end
 
   def create #POST / riders
